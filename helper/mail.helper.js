@@ -7,8 +7,8 @@ var mailService = async (to, sub, html) => {
             // port: 587,    //optional
             // secure: false,   //optional
             auth: {
-                user: 'mansiankoliya1@gmail.com',
-                pass: 'hfzbcleobsyoyevb'
+                user: process.env.email,
+                pass: process.env.pass
 
             },
             tls: {
@@ -17,7 +17,7 @@ var mailService = async (to, sub, html) => {
         });
 
         let mailOption = {
-            from: 'mansiankoliya1@gmail.com', // Your Mail
+            from: process.env.email, // Your Mail
             to: to,
             subject: sub,
             html: html,
